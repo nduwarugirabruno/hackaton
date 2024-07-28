@@ -1,0 +1,83 @@
+<div class="container">
+    <h1>Shipme</h1>
+    <form id="login-form" [formGroup]="registerForm" (submit)="submit()">
+        <h2>Inscription</h2>
+        <div class="row g-2">
+            <div class="col-md">
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="firstName" placeholder="Raphael" required formControlName="firstName">
+                    <label for="firstName">First Name <span style="color: red;">*</span></label>
+                </div>
+            </div>
+            <div class="col-md">
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="lastName" placeholder="Minso" required formControlName="lastName">
+                    <label for="lastName">Last Name <span style="color: red;">*</span></label>
+                </div>
+            </div>
+        </div>
+
+        <div class="row g-2">
+            <div class="col-md-6">
+                <div class="input-group mb-3">
+                    <label class="input-group-text" for="country">Country <span style="color: red;">*</span></label>
+                    <select class="form-select" id="country" aria-label="Country" formControlName="country">
+                        <option [selected]="true">Choose a country</option>
+                        @for (country of countries; track $index) {
+                            <option [value]="country">{{country.toString().replaceAll('_', ' ').replaceAll('-', ' ')}}</option>
+                        }
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-floating mb-3">
+                    <input type="tel" class="form-control" id="tel" placeholder="69******0" required formControlName="phone">
+                    <label for="tel">Phone <span style="color: red;">*</span></label>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-floating mb-3">
+            <input type="email" class="form-control" id="email" placeholder="email@example.com" required formControlName="email">
+            <label for="email">Email <span style="color: red;">*</span></label>
+        </div>
+
+        <div class="row g-2">
+            <div class="col-md">
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="city" placeholder="*****" required formControlName="city">
+                    <label for="city">City <span style="color: red;">*</span></label>
+                </div>
+            </div>
+            <div class="col-md">
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="firstLine" placeholder="*****" required formControlName="firstLine">
+                    <label for="firstLine">First Line <span style="color: red;">*</span></label>
+                </div>
+            </div>
+            <div class="col-md">
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="secondLine" placeholder="*****" required formControlName="secondLine">
+                    <label for="secondLine">Second Line </label>
+                </div>
+            </div>
+        </div>
+
+        <div class="row g-2">
+            <div class="col-md">
+                <div class="form-floating mb-3">
+                    <input type="password" class="form-control" id="password" placeholder="*****" required formControlName="password">
+                    <label for="password">Password <span style="color: red;">*</span></label>
+                </div>
+            </div>
+            <div class="col-md">
+                <div class="form-floating mb-3">
+                    <input type="password" class="form-control" id="confirmedPassword" placeholder="*****" required formControlName="confirmedPassword">
+                    <label for="confirmedPassword">Confirm Password <span style="color: red;">*</span></label>
+                </div>
+            </div>
+        </div>
+
+        <button class="btn" type="submit" [disabled]="registerForm.invalid">Signup</button>
+    </form>
+</div>

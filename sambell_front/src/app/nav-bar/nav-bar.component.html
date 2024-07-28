@@ -1,0 +1,43 @@
+<div class="container-fluid text-body px-3" style="border: none;">
+    <nav class="navbar nav-underline navbar-expand-lg sticky-top mx-2" style="font-size: small;">
+        <div class="container-fluid">
+            <a [routerLink]="['/home']" class="navbar-brand">
+                <img alt="Logo" class="my-auto d-inline-block align-text-center"  src="/assets/present_02.png" width="150">
+            </a>
+
+            <button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
+                    class="navbar-toggler" data-bs-target="#navbarSupportedContent"
+                    data-bs-toggle="collapse" type="button">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item mx-2">
+                        <a [routerLinkActiveOptions]="{ exact: true}" [routerLink]="['/home']" ariaCurrentWhenActive="page"
+                           class="nav-link" routerLinkActive="active">Accueil</a>
+                    </li>
+                    <li class="nav-item dropdown mx-2">
+                        <a aria-expanded="false" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" ariaCurrentWhenActive="page" [routerLink]="['/products']" role="button">
+                            Produits
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" [routerLink]="['/products/local']" routerLinkActive="active" ariaCurrentWhenActive="page">Produits Locaux</a></li>
+                            <li><a class="dropdown-item" [routerLink]="['/products/international']" routerLinkActive="active" ariaCurrentWhenActive="page">Produits Internationaux</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item fw-semibold" role="button">Catégories</a></li>
+                            <li><a class="dropdown-item" role="button">Smartphones</a></li>
+                            <li><a class="dropdown-item" role="button">Ordinateurs</a></li>
+                            <li><a class="dropdown-item" role="button">Caméras</a></li>
+                            <li><a class="dropdown-item" role="button">Produits Ménagers</a></li>
+                            <li><a class="dropdown-item" role="button">Plus...</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <div class="d-flex sign">
+                    <button class="btn btn-outline-primary me-1" type="button">Se connecter</button>
+                    <button class="btn btn-primary ms-1" type="button">S'inscrire</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+</div>

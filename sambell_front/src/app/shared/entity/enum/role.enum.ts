@@ -1,0 +1,3 @@
+export enum Role {
+    USER_STANDARD, USER_PARTNER, ADMIN_SUDO
+}

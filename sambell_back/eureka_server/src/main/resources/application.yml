@@ -1,0 +1,28 @@
+## Global configuration
+
+server:
+    port: 8761
+
+eureka:
+    client:
+        register-with-eureka: false
+        fetch-registry: false
+
+spring:
+    application:
+        name: eureka-server
+    datasource:
+        url: jdbc:postgresql://localhost:5432/sambell_database
+        username: links
+        password: links
+        driver-class-name: org.postgresql.Driver
+    jpa:
+        hibernate:
+            ddl-auto: update
+        show-sql: true
+        properties:
+            hibernate:
+                format_sql: true
+        database: postgresql
+        open-in-view: true
+
